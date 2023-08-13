@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import NavBAr from "./components/NavBAr";
 import Logo from "./components/Logo";
@@ -59,10 +60,6 @@ const tempWatchedData = [
 	},
 ];
 
-export const average = (arr) =>
-	arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
-
-
 export default function App() {
 	const [movies, setMovies] = useState(tempMovieData);
 	const [watched, setWatched] = useState(tempWatchedData);
@@ -77,11 +74,11 @@ export default function App() {
 
 			<Movies>
 				<Box>
-				<MoviesList movies={movies} />
+					<MoviesList movies={movies} />
 				</Box>
 				<Box>
 					<WatchedListBox>
-						<MovieSummary watched={watched} average={average}/>
+						<MovieSummary watched={watched} />
 						<WatchedList watched={watched} />
 					</WatchedListBox>
 				</Box>
