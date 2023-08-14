@@ -1,7 +1,7 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+// import { useState } from "react";
 
-function Search() {
-	const [query, setQuery] = useState("");
+function Search({query, setQuery}) {
 
 	return (
 		<input
@@ -9,9 +9,10 @@ function Search() {
 			type="text"
 			placeholder="Search movies..."
 			value={query}
-			onChange={(e) => setQuery(e.target.value)}
-		/>
-	);
+			onChange={(e)=> setQuery(e.target.value)}
+			/>
+			// onChange={handleSetQuery}
+			);
 }
 
 export default Search;
